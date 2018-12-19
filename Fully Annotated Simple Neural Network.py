@@ -1,5 +1,9 @@
 '''This is Sam Stazinski's annotation of https://bit.ly/2s2S7i4'''
 
+'''The goal of this neural network is to go from random weights 
+and train the weights on a single set of a 3x3 grid to output
+a specific 3x1 set of ones and zeros'''
+
 #  Imports numpy, numpy adds a lot of math functions and tools
 import numpy as np
 
@@ -80,9 +84,9 @@ class NeuralNetwork:
         #  This is the same as the last line except it is for the first set of weights
         d_weights1 = np.dot(self.input.T, (np.dot(2*(self.y - self.output)*sigmoid_derivative(self.output), self.weights2.T) * sigmoid_derivative(self.layer1)))
 
-        #  Here the first set of weights is adjusted by the amount determined in line 79
+        #  Here the first set of weights is adjusted by the amount determined a few lines up
         self.weights1 += d_weights1
-        #  Here the second set of weights is adjusted by the amount determined in line 81
+        #  Here the second set of weights is adjusted by the amount determined a few lines up
         self.weights2 += d_weights2
 
 
